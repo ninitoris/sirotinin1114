@@ -1,0 +1,44 @@
+{
+  "Mitems": [
+    {
+      "name": "Стол деревянный",
+      "artikul": "a1",
+      "price": "8000",
+      "proizvoditel": "Мебельный завод",
+      "categoriya": "Мебель",
+      "weight": "10",
+      "amount": 6,
+      "id": 1
+    },
+    {
+      "name": "Книги 100шт",
+      "artikul": "К1",
+      "price": "18000",
+      "proizvoditel": "Книжный завод",
+      "categoriya": "Книги",
+      "weight": "10",
+      "amount": "1231",
+      "id": 2
+    },
+    {
+      "name": "Телефон Iphone 7",
+      "artikul": "T1",
+      "price": "50000",
+      "proizvoditel": "Apple",
+      "categoriya": "Телефоны",
+      "weight": "1",
+      "amount": 995,
+      "id": 3
+    },
+    {
+      "name": "Блендер",
+      "artikul": "T1",
+      "price": "2500",
+      "proizvoditel": "Bosh",
+      "categoriya": "Техника",
+      "weight": "3",
+      "amount": 73,
+      "id": 4
+    }
+  ]
+}

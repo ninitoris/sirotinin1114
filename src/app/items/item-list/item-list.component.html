@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h4>Фильтр</h4>
+      <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="searchCat"
+      placeholder="Введите категорию или количество">
+    
+    </div>
+  </div> 
+  <br>
+<table id="table">
+    <thead>
+      <tr>
+        <th scope="col-3">#</th>
+        <th scope="col-3">Название</th>
+        <th scope="col-3">Категория</th>
+        <th scope="col-3">Вес</th>
+        <th scope="col-3">Цена, р</th>
+        <th scope="col-3">Кол-во</th>
+        
+        <th scope = "col-3">
+            <button class="btn btn-primary btn-sm" 
+            (click)="onAddProfile()">
+            Добавить Позицию
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items | myfilter: searchCat | mysorting: 'up' : 'id'">
+            <td scope="row">{{ item.id }}</td>
+            <td >{{ item.name }}</td>
+            <td>{{item.categoriya }}</td>
+            <td>{{item.weight }}</td>
+            <td>{{item.price }}</td>
+            <td>
+              <button type="button"
+              class="btn btn-primary btn-sm"
+              (click)="onDecAmount(item.id)">-</button>
+              {{item.amount}} 
+              <button type="button"
+              class="btn btn-primary btn-sm"
+              (click)="onIncAmount(item.id)">+</button>
+            </td>
+            
+            
+            
+            <td>
+                <button class="btn btn-info btn-sm" style="margin: 0 10px 0 0;"
+                (click)="onLinkProfile(item.id)">
+                  Информация
+                </button>
+                <button mat-button class="btn btn-danger btn-sm" 
+                (click)="onDelete(item)">
+                  Удалить
+                </button>
+              </td>
+      </tr>
+        
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <form [formGroup]="itemForm">
+        <div class="form-group">
+            <label for="ItemArtik">Наименование</label>
+            <input
+              type="text"
+              class="form-control"
+              id="itemName"
+              placeholder=""
+              formControlName="name"
+            />
+            <div *ngIf="(itemForm.get('name')!.touched && itemForm.get('name')!.invalid)">
+                <small class="text-danger">Введите наименование</small>
+              </div>
+        </div>
+
+        <div class="form-group">
+        <label for="Itemname">Артикул</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemArtik"
+          placeholder=""
+          formControlName="artikul"
+        />
+        <div *ngIf="(itemForm.get('artikul')!.touched && itemForm.get('artikul')!.invalid)">
+            <small class="text-danger">Введите артикул</small>
+          </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="ItemArtik">Цена, р</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemprice"
+          placeholder=""
+          formControlName="price"
+        />
+        <div *ngIf="(itemForm.get('price')!.touched && itemForm.get('price')!.invalid)">
+            <small class="text-danger">Введите корректную цену</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ItemArtik">Производитель</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemproizv"
+          placeholder=""
+          formControlName="proizvoditel"
+        />
+        <div *ngIf="(itemForm.get('proizvoditel')!.touched && itemForm.get('proizvoditel')!.invalid)">
+            <small class="text-danger">Введите производителя</small>
+          </div>
+      </div>    
+
+
+
+      <div class="form-group" >
+        <label for="type">Категория</label>
+        <select class="custom-select" id="itemcat"  formControlName="categoriya">
+          <option value = "Мебель" >Мебель</option>
+          <option value= "Техника" >Техника</option>
+          <option value = "Книги">Книги</option>
+          <option value = "Телефоны">Телефоны</option>
+        </select>
+      
+      
+
+
+      
+        <div *ngIf="(itemForm.get('categoriya')!.touched && itemForm.get('categoriya')!.invalid)">
+            <small class="text-danger">Выберите категорию</small>
+          </div>
+        </div>
+
+
+
+      <div class="form-group">
+        <label for="ItemArtik">Вес, кг</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemweight"
+          placeholder=""
+          formControlName="weight"
+        />
+        <div *ngIf="(itemForm.get('weight')!.touched && itemForm.get('weight')!.invalid)">
+            <small class="text-danger">Введите корректный вес</small>
+          </div>
+      </div> 
+
+      <div class="form-group">
+        <label for="ItemArtik">Кол-во на складе</label>
+        <input
+          type="text"
+          class="form-control"
+          id="itemamount"
+          placeholder=""
+          formControlName="amount"
+        />
+        <div *ngIf="(itemForm.get('amount')!.touched && itemForm.get('amount')!.invalid)">
+            <small class="text-danger">Введите кол-во товара</small>
+          </div>
+      </div> 
+
+      
+
+      <div class="form-gropup">
+  
+        <button class="btn btn-primary mr-3"  [routerLink]="'/items'">
+            Вернуться
+        </button>
+
+        <button class="btn btn-success mr-3" [disabled]="itemForm.invalid" (click)="onSave()" [routerLink]="'/items'">
+          Сохранить
+        </button>
+  
+        <button class="btn btn-danger"  *ngIf="item.id != null" (click)="onDelete(item)" [routerLink]="'/items'">
+          Удалить
+        </button>
+        
+
+        
+     
+    </div>
+    
+    </form>
+  </div>
